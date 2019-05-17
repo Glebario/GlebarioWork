@@ -1,0 +1,469 @@
+/* Интегрируем переменные с цветами */
+@import "colors"
+@import "reset"
+@import "fontello"
+@import "media"
+
+html
+    font-size: 10px
+
+body
+    background-color: $body-bg
+    color: $dark
+    font-family: 'Roboto', sans-serif
+    padding-top: 4rem
+    margin: 0
+    font-size: 1.4rem
+
+h2 
+    font-style: 2.4rem
+
+a
+    color: $active-color
+
+.btn
+    display: inline-block
+    padding: 2rem 3rem
+    color: $white
+    text-decoration: none
+    border-radius: 0.5rem
+    font-size: 1.6rem
+    font-weight: 700
+    &-primary
+        background-color: $active-color
+        border-bottom: 0.5rem solid darken($active-color, 10%)
+        &:hover
+            background-color: lighten($active-color, 2%)
+
+
+.top-nav
+    background-color: $white
+    padding: 1.5rem 3.4rem
+    position: relative
+    &_btn
+        display: none 
+        width: 3rem
+        height: 3rem
+        background-color: transparent
+        border: none
+        font-size: 1.8rem
+        position: absolute
+        right: 1.5rem
+        top: -5rem
+        &:hover
+            cursor: pointer
+    &_menu
+        list-style: none
+        padding: 0
+        display: flex
+        & :last-child
+            margin-right: 0
+        li
+            a
+                text-transform: uppercase
+                text-decoration: none
+                color: $dark
+                font-weight: 700
+                &::after
+                    content: ''
+                    display: block
+                    width: 100%
+                    height: 0.2rem
+                    background-color: $active-color
+                    transform: translateY(3.7rem) scale(0)
+                    transition: all 0.2s
+                &:hover
+                    text-decoration: none
+                    &::after 
+                        transform: translateY(3.8rem) scale(1)
+
+.left-sidebar
+    margin-top: 4rem // =40px
+    &_btn
+        background-color: $white
+        padding: 1.5rem
+        position: relative
+        &:hover
+            cursor: pointer
+        &::after
+            content: ''
+            display: inline-block
+            position: absolute
+            right: 1.5rem
+            width: 1.5rem
+            height: 1.5rem
+            border-bottom: 0.2rem solid $dark
+            border-right: 0.2rem solid $dark
+            transform: rotate(45deg)
+    &_menu
+        list-style: none
+        padding: 0
+        background-color: $white
+        li
+            transition: all 0.1s
+            &:first-child
+                a
+                    padding-top: 2rem
+            &:last-child
+                a
+                    padding-bottom: 2rem
+            &:hover
+                background-color: $active-color
+                a
+                    color: $white
+            a
+                display: block
+                text-decoration: none
+                color: $dark
+                font-size: 1.6rem
+                font-weight: 400
+                padding: 1.5rem 2.9rem
+    &_object
+        background-color: $white
+        margin-top: 3rem
+        &-description
+            padding: 3rem
+            h3
+                text-transform: uppercase
+                font-weight: 400
+                font-size: 1.8rem  
+
+.content
+    margin-top: 4rem
+    margin-bottom: 7.6rem
+.directions
+    margin-top: 8rem
+    &-block
+        background-color: $white
+        text-align: center
+        height: 22rem
+        padding: 1rem
+        background-position: bottom center
+        background-repeat: no-repeat
+        h3 
+            color: $active-color
+.footer
+    margin-top: 6rem
+    background-color: $dark
+    color: $footer-text
+    padding: 5.9rem 0
+    &-policy-link
+        font-size: 1.2rem
+    p
+        margin-bottom: 1.4rem
+    a
+        color: $footer-text
+        text-decoration: none
+        &:hover
+            color: $white
+    small
+        display: block
+        margin-top: 5.6rem
+        line-height: 1.6rem
+        font-size: 1rem
+        max-width: 80%
+    ul 
+        list-style: none
+        padding: 0
+        li
+            line-height: 3.2rem
+    &-contacts
+        text-align: right
+        &_phone
+            font-weight: 400
+            font-size: 2rem
+            color: $active-color
+    &-social-links
+        @extend .footer-contacts
+        li
+            display: inline-block
+            a 
+                display: inline-block
+                width: 4.2rem
+                height: 4.2rem
+                background-color: rgba($white, 0.1)
+                text-align: center
+                border-radius: 50%
+                line-height: 4.2rem
+                margin-left: 1rem
+                transition: all 0.2s
+                &:hover
+                    background-color: rgba($white, 0.9)
+                    color: $dark
+
+// Секция team
+.team
+    text-align: center
+    h4 
+        font-size: 1.8rem
+        font-weight: 400
+        margin-bottom: 1.5rem
+    p
+        margin-bottom: 4rem
+
+// Контакты
+.contacts
+    font-size: 1.6rem
+    &-img 
+        margin-right: 1.2rem
+        vertical-align: middle
+    &-adress
+        display: block
+        line-height: 2
+    &-btn
+        margin-top: 3.6rem
+    &-social-links
+        ul
+            list-style: none
+            margin-top: 3.6rem
+            padding: 0
+            li
+                display: inline-block
+                a
+                    display: inline-block
+                    background-color: $active-color
+                    color: $white
+                    margin-right: 1.5rem
+                    width: 3.2rem
+                    height: 3.2rem
+                    text-align: center
+                    line-height: 3.2rem
+                    border-radius: 50%
+                    &:hover
+                        background-color: $white
+                        color: $active-color
+
+// Структура
+.organization
+    &-card 
+        background-color: $white
+        padding: 2.5rem 3rem
+        margin-bottom: 3rem
+        min-height: 42rem
+        display: flex
+        flex-direction: column
+        padding: 2.5rem 3rem
+        transition: all 0.2s
+        &:hover
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 1, 0.1)
+        a 
+            text-transform: uppercase
+            text-decoration: none
+            margin-bottom: 2rem
+            display: block
+        small
+            display: block
+            color: $inn
+            line-height: 1.5
+        p 
+            line-height: 2.2rem
+
+
+// Инвестиционные программы
+// Калькулятор
+.calc
+    h4 
+        margin-top: 0
+        margin-bottom: 3rem
+    &-radio 
+        flex-basis: 50%
+        &:last-child
+            flex-basis: 100%
+            display: flex
+    &-legal
+        font-size: 1.2rem
+    &-programms
+        display: flex
+        flex-wrap: wrap
+        label
+            display: inline-block
+            margin-bottom: 2rem
+            small
+                display: block
+                margin-left: 2.8rem
+                opacity: 0.5
+                font-size: 1rem
+            &::before
+                content: ''
+                display: inline-block
+                vertical-align: middle
+                width: 2.4rem
+                height: 2.4rem
+                box-shadow: 0 0.5rem 1rem rgba(0, 0, 1, 0.1)
+                background-color: $white 
+                border: 0.6rem solid $white
+                border-radius: 50%
+                transition: all 0.2s
+    input[type="radio"]
+        display: none
+        &:checked
+            &+label::before
+                background-color: $active-color
+                border: 0.6rem solid $white
+    &-popular
+        padding-left: 0.5rem
+        padding-right: 0.5rem
+        margin-left: 1.6rem
+        height: 2.5rem
+        color: $white
+        text-align: center
+        background-color: $active-color
+        line-height: 2.5rem
+        font-style: 1rem
+        text-transform: uppercase
+        position: relative
+        &::before
+            content: ''
+            width: 0.6rem
+            height: 1.3rem
+            border: 0.6rem solid transparent
+            border-right: 0.6rem solid $active-color
+            position: absolute
+            left: -12px
+            top: 50%
+            margin-top: -6px
+    &-summ
+        &_invest
+            margin-top: 3rem
+            &_label
+                margin-right: 1rem
+            &_num
+                display: inline-block
+                padding: 1rem 4.8rem
+                background-color: $white
+                font-size: 1.8rem
+    &-total, &-monthly
+        margin-top: 2rem
+        display: inline-block
+        text-align: center
+        background-color: $white
+        padding: 1rem 
+        margin-right: 4rem
+        strong
+            font-size: 1.8rem
+            color: $active-color
+            font-weight: 400
+            small
+                font-size: 1rem
+    &-monthly
+        background-color: transparent
+        font-size: 1.8rem
+        text-align: center
+        display: inline-block
+        small
+            font-size: 1rem
+
+// Раздел котегории обьектов
+.object
+    &-card
+        background-color: $white
+        margin-bottom: 3rem
+        img
+            width: 100%
+        &_text
+            padding: 3rem
+        &_title
+            display: block
+            font-size: 1.6rem
+            color: $active-color
+            text-decoration: none
+        &_price
+            text-align: center
+            font-size: 2rem
+            color: $active-color
+            font-weight: 700
+            display: block
+        &_btn
+            display: block
+            text-align: center
+        &_more
+            color: $dark
+            text-align: center
+            display: block
+            margin-top: 3rem
+
+// Страница обьекта
+.object
+    &-page 
+        &_galery
+            float: right
+
+// Всплывающие окна
+.modal
+    display: none
+    background-color: rgba(0,0,0,0.4)
+    position: fixed
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    &-content 
+        background-color: $white
+        width: 100%
+        max-width: 37rem
+        margin: 5rem auto
+        text-align: center
+        padding: 3rem 5rem
+        position: relative
+        box-shadow: 0 1.2rem 2.4rem rgba(0, 0, 1, 0.18)
+        .close
+            position: absolute
+            top: 1.5rem
+            right: 1.5rem
+            line-height: 1
+            font-size: 2rem
+            opacity: 0.5
+            &:hover
+                cursor: pointer
+        h4 
+            font-size: 1.8rem
+            margin-top: 0
+            color: $active-color
+            margin-bottom: 1.5rem
+        p
+            font-size: 1.2rem
+            margin-top: 0
+    &-form 
+        margin-top: 3.7rem
+        input
+            display: block
+            width: 100%
+            border: 0.1rem solid rgba($dark, 0.15)
+            border-radius: 0.4rem
+            font-size: 1.5rem
+            margin-bottom: 1rem
+            padding: 2rem
+        &_btn
+            display: block
+            width: 100%
+            text-align: center
+            margin-bottom: 2rem
+
+
+            
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+                
+
+
+
+
+
+
+                
+                

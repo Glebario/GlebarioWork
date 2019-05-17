@@ -1,0 +1,78 @@
+// Адаптируем сайт под мобильные устройсва
+@media (max-width: 767px)
+    html
+        font-size: 5px
+        .top-nav
+            &_btn
+                display: block
+            &_menu
+                flex-direction: column
+                display: none
+                &__active
+                    display: flex
+                li
+                    line-height: 2
+                    align-items: stretch
+                    a
+                        &::after
+                            display: none 
+        .left-sidebar
+            &_btn
+                display: block  
+            &_menu 
+                display: none
+                &__active
+                    display: block
+            &_object
+                display: none
+
+        .footer
+            &-contacts 
+                text-align: left 
+            .copy
+                text-align: center
+                small
+                    display: block
+                    margin: 3.6px auto 
+@media (min-width: 767px) and (max-width: 991px)
+    html
+        font-size: 5px
+        .top-nav
+            &_btn
+                display: block
+            &_menu
+                display: none
+                &__active
+                    display: flex
+                    justify-content: space-around
+                li
+                    line-height: 2
+                    margin-right: 0
+                    a
+                        &::after
+                            display: none
+        .left-sidebar
+            &_btn
+                display: block  
+            &_menu 
+                display: none
+                &__active
+                    display: block
+            &_object
+                display: none
+        .footer
+            &-contacts 
+                text-align: left 
+@media (min-width: 991px) and (max-width: 1200px)
+    .top-nav
+        &_menu
+            li
+                margin-right: 2rem
+    .left-sidebar
+        &_object
+            display: none
+@media (min-width: 1201px) 
+    .top-nav
+        &_menu
+            li
+                margin-right: 4.5rem
